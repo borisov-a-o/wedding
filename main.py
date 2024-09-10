@@ -1,7 +1,7 @@
 import aiohttp
 import asyncio
 
-#asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 
 async def send_request(session, user_id, guest_id):
@@ -23,7 +23,7 @@ async def send_request(session, user_id, guest_id):
 
 async def main():
     total_requests = 100
-    batch_size = 2
+    batch_size = 10
     user_id = '749611'
 
     async with aiohttp.ClientSession() as session:
